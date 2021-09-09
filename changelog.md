@@ -1,7 +1,33 @@
-### 1.2.3.1 TBD
+### 1.2.4.1
+
+* Support `template-haskell-2.17.0.0`
+* Support `bytestring-0.11`
+* Add `take . drop` related RULE
+
+### 1.2.4.0
+
+* Add TH `Lift` instances for `Data.Text.Text` and `Data.Text.Lazy.Text` (gh-232)
+
+* Update Haddock documentation to better reflect fusion eligibility; improve fusion
+  rules for `takeWhileEnd` and `length` (gh-241, ghc-202)
+
+* Optimise `Data.Text.replicate` from `O(n)` to `O(log n)` (gh-209)
+
+* Support `base-4.13.0.0`
+
+### 1.2.3.1
 
 * Make `decodeUtf8With` fail explicitly for unsupported non-BMP
   replacement characters instead silent undefined behaviour (gh-213)
+
+* Fix termination condition for file reads via `Data.Text.IO`
+  operations (gh-223)
+
+* A serious correctness issue affecting uses of `take` and `drop` with
+  negative counts has been fixed (gh-227)
+
+* A bug in the case-mapping functions resulting in unreasonably large
+  allocations with large arguments has been fixed (gh-221)
 
 ### 1.2.3.0
 
